@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/**
+ * 主体
+ */
+.article-list{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.article-list > li > h3{
+	margin: 0;
+	font-weight: normal;
+}
+.article-content{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	font-size: 1.4rem;
+	margin: 15px 0 0;
+}
+.article-content > dt > a > img{
+	width: 180px;
+	height: 120px;
+	display: block;
+	margin-right: 20px;
+}
+.article-content > dd{
+	margin: 0;
+}
+.article-content > dd > p{
+	max-height: 105px;
+	overflow: hidden;
+	word-break: break-all;
+}
+
+.paging{
+	margin: 0 0 20px;
+	padding: 5px 15px;
+	list-style-type: none;
+	background: #fff;
+	font-size: 1.4rem;
+	text-align: center;
+	display: -webkit-flex;
+	display: -webkit-box;
+	display: flex;
+}
+.paging-total{
+	-webkit-box-flex: 1;
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+}

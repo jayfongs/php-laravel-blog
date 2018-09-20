@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\User;
+use Illuminate\Console\Command;
+
+class JayFong extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'jayfong';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = '创建用户';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        $username = $this->ask('请输入管理员用户名');
+        $password = $this->secret('请输入管理员密码');
+
+        if (!$username || !$password) {
+            $this->error('请正确输入用户名或密码');
+            exit;
+        }
+
+        $result = User::create(['username' => $username, 'password' => $password]);
+
+        $returnStr = $result ? '创建成功' : '创建失败';
+
+        $this->info($returnStr);
+    }
+}
